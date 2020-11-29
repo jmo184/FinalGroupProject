@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.paint.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane fx:id="anchorView" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="735.0" prefWidth="881.0" stylesheets="@../../bin/application/application.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.ViewController">
+   <children>
+      <Button fx:id="home" layoutX="719.0" layoutY="618.0" mnemonicParsing="false" onAction="#gobackhome" prefHeight="64.0" prefWidth="122.0" text="BACK">
+         <font>
+            <Font size="12.0" />
+         </font>
+      </Button>
+      <ListView fx:id="list1" layoutX="9.0" layoutY="75.0" prefHeight="483.0" prefWidth="113.0" />
+      <ListView fx:id="list2" layoutX="122.0" layoutY="75.0" prefHeight="483.0" prefWidth="113.0" />
+      <ListView fx:id="list3" layoutX="230.0" layoutY="75.0" prefHeight="483.0" prefWidth="113.0" />
+      <ListView fx:id="list4" layoutX="343.0" layoutY="75.0" prefHeight="483.0" prefWidth="113.0" />
+      <ListView fx:id="list6" layoutX="569.0" layoutY="75.0" prefHeight="483.0" prefWidth="113.0" />
+      <ListView fx:id="list5" layoutX="456.0" layoutY="75.0" prefHeight="483.0" prefWidth="113.0" />
+      <ListView fx:id="list7" layoutX="682.0" layoutY="75.0" prefHeight="483.0" prefWidth="159.0" />
+      <Label layoutX="9.0" layoutY="43.0" prefHeight="35.0" prefWidth="138.0" text="Student ID" textFill="#11ff00">
+         <font>
+            <Font name="System Bold" size="18.0" />
+         </font></Label>
+      <Label layoutX="122.0" layoutY="43.0" prefHeight="35.0" prefWidth="138.0" text="First Name" textFill="#09ff00">
+         <font>
+            <Font name="System Bold" size="20.0" />
+         </font></Label>
+      <Label layoutX="368.0" layoutY="41.0" prefHeight="41.0" prefWidth="113.0" text="Sex" textFill="#02ff20">
+         <font>
+            <Font name="System Bold" size="21.0" />
+         </font></Label>
+      <Label layoutX="230.0" layoutY="41.0" prefHeight="41.0" prefWidth="138.0" text="Last Name" textFill="#2fff00">
+         <font>
+            <Font name="System Bold" size="21.0" />
+         </font></Label>
+      <Label layoutX="456.0" layoutY="41.0" prefHeight="35.0" prefWidth="138.0" text="Date of Birth" textFill="#22ff00">
+         <font>
+            <Font name="System Bold" size="17.0" />
+         </font></Label>
+      <Label layoutX="569.0" layoutY="43.0" prefHeight="35.0" prefWidth="122.0" text="Phone Number" textFill="#2bff00">
+         <font>
+            <Font name="System Bold" size="16.0" />
+         </font></Label>
+      <Label alignment="CENTER" layoutX="682.0" layoutY="45.0" prefHeight="17.0" prefWidth="159.0" text="Address" textAlignment="CENTER" textFill="#04ff00">
+         <font>
+            <Font size="19.0" />
+         </font></Label>
+   </children>
+</AnchorPane>

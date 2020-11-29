@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane fx:id="anchor" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="850.0" stylesheets="@../../bin/application/application.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.MainMenuController">
+   <children>
+      <Button fx:id="add" layoutX="61.0" layoutY="54.0" mnemonicParsing="false" onAction="#addStu" prefHeight="50.0" prefWidth="100.0" text="Add Student">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Button>
+      <Button fx:id="view" layoutX="66.0" layoutY="363.0" mnemonicParsing="false" onAction="#viewStu" prefHeight="50.0" prefWidth="115.0" text="View Student">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Button>
+      <Button fx:id="remove" layoutX="61.0" layoutY="241.0" mnemonicParsing="false" onAction="#removeStu" prefHeight="51.0" prefWidth="124.0" text="Remove Student">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Button>
+      <Button fx:id="log" layoutX="72.0" layoutY="543.0" mnemonicParsing="false" onAction="#logout" prefHeight="25.0" prefWidth="77.0" text="LOGOUT">
+         <font>
+            <Font size="12.0" />
+         </font>
+      </Button>
+      <Button fx:id="update" layoutX="60.0" layoutY="145.0" mnemonicParsing="false" onAction="#updateStu" prefHeight="51.0" prefWidth="133.0" text="update student">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Button>
+   </children>
+</AnchorPane>

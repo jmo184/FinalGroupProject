@@ -1,5 +1,15 @@
 package application;
 
+/*
+Group 12: The Code Crew
+Team leader:
+Tuan Nguyentuan9891/#72470140
+
+Jackie Tranjmo184/#70924204
+
+Samir Stanislav YezhnikovskyHeart-Force/ #71355492
+*/
+
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
 import java.io.File;
@@ -59,15 +69,15 @@ public class registerController {
     void register(ActionEvent event) throws IOException {
     	
     	
-        List<String> Array = new ArrayList<String>();
-        File myfile = new File("data.txt");
+        List<String> Array = new ArrayList<String>(); // using the array list to store data.
+        File myfile = new File("data.txt");  // open the file
         
-        if(!myfile.exists()){
+        if(!myfile.exists()){ // if the file is not exist then create the new one
           myfile.createNewFile();
         }        
-        Scanner myReader = new Scanner(myfile);
-    	String data = null;
-    	String stID = ID.getText();
+        Scanner myReader = new Scanner(myfile); // scan the file
+    	String data = null; // declare data.
+    	String stID = ID.getText(); // enter the Student ID text.
     	 
     		
     	if (stID.matches("^[a-zA-Z]{3}[0-9]{3}$") == false) { // if the user name is not "abc123" exit the program.
@@ -85,34 +95,34 @@ public class registerController {
 		}
     	else { 
     		
-    if (myfile.length() == 0) {
-    	  Array.add(stID);
-          File file=new File("data.txt");
-          FileWriter writer = new FileWriter(file,true); 
-          Array.add(firstName.getText());
-          Array.add(lastName.getText());
+    if (myfile.length() == 0) {  // if the content of the file is empty, 
+    	  Array.add(stID);  // add the ID in the array
+          File file=new File("data.txt");  // open the file
+          FileWriter writer = new FileWriter(file,true);  // writer contain to the file.
+          Array.add(firstName.getText()); // add the First Name to the file
+          Array.add(lastName.getText()); // add the last name to the file
           
-          if (female.isSelected()) {
+          if (female.isSelected()) { // add check to female if female selected
               Array.add("Female");     	
               }
-              else if (male.isSelected()) {
+              else if (male.isSelected()) { // add check to male if male selected
                   Array.add("Male");     	
                   }
-          Array.add(dob.getText());
-          Array.add(phone.getText());
-          Array.add(homeAd.getText());
+          Array.add(dob.getText());   // add the date of birth to the file
+          Array.add(phone.getText());  // add the phone to the file
+          Array.add(homeAd.getText());  // add the home address to the file
       	
       	
-          for(String str: Array) {
+          for(String str: Array) {  // write to contain of the array to the file
           	  writer.write(str + System.lineSeparator());
           	}         
-          
+          // new user created when open the new file
           Alert alert = new Alert(AlertType.INFORMATION);
   	        alert.setTitle("INFORMATION STATUS");
   	        alert.setHeaderText(null);
   	        alert.setContentText("NEW USER CREATED.");
   	        alert.showAndWait();
-  	        
+  	        // close the file and myreader.
           writer.close();
           myReader.close(); 
           ID.clear();
@@ -127,12 +137,12 @@ public class registerController {
     	
     	
     else {
-    		
+    		// if the file is create and not an empty file
    	while (myReader.hasNextLine()) {
             data = myReader.nextLine();
-       	
+       	 // loop through the file
        if (data.contains(stID)) {   
-    	   
+    	   // if the data contain the Student ID print the Error and try again.
     	   Alert alert = new Alert(AlertType.ERROR);
 	        alert.setTitle("ERROR");
  	        alert.setHeaderText(null);
@@ -147,9 +157,10 @@ public class registerController {
  	  		
  	  		break;
        }
-       }
+       } 
+   	   // if the contain of the file does not contain the Student ID, then add new student info
         if (!data.contains(stID)) {
-        	
+        	// code the same thing as above when create a new student.
         Array.add(stID);
         File file=new File("data.txt");
         FileWriter writer = new FileWriter(file,true); 
@@ -176,7 +187,7 @@ public class registerController {
 	        alert.setHeaderText(null);
 	        alert.setContentText("NEW USER CREATED.");
 	        alert.showAndWait();
-	        
+	        // close and clear all file.
         writer.close();
         myReader.close(); 
         ID.clear();
@@ -192,7 +203,7 @@ public class registerController {
     }
     }
 
-    
+    // go back to the Main Menu if click the home button
     @FXML
     void gobackhome(ActionEvent event) throws IOException {
     	anchor = FXMLLoader.load(getClass().getResource("mainMenu.fxml")); 

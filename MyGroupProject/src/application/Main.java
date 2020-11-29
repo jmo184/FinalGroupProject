@@ -4,7 +4,7 @@ package application;
 Group 12: The Code Crew
 Team leader:
 Tuan Nguyentuan9891/#72470140
-Jackie Tranjmo184/#70924204
+Jackie Tranjmo184/#70924204 
 Samir Stanislav YezhnikovskyHeart-Force/ #71355492
 */
 import javafx.application.Application;
@@ -24,12 +24,12 @@ public class Main extends Application {
 			primaryStage.setScene(scene); // set scene
 			primaryStage.setTitle("login"); // set the title of the window
 			primaryStage.show();
-		} catch(Exception e) {
+		} catch(Exception e) { // catch errors 
 			e.printStackTrace();
 		}
 	}
 	
-	public static void main(String[] args) {
+	public static void main(String[] args) { // function to launch the GUI
 		launch(args);
 	}
 }

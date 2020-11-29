@@ -4,9 +4,7 @@ package application;
 Group 12: The Code Crew
 Team leader:
 Tuan Nguyentuan9891/#72470140
-
 Jackie Tranjmo184/#70924204
-
 Samir Stanislav YezhnikovskyHeart-Force/ #71355492
 */
 

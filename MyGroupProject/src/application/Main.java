@@ -1,9 +1,11 @@
 package application;
-/*
-Full Name: Tuan Nguyen
-UTSA ID: oce608
 
-this is import all the files needed for  the controller
+/*
+Group 12: The Code Crew
+Team leader:
+Tuan Nguyentuan9891/#72470140
+Jackie Tranjmo184/#70924204
+Samir Stanislav YezhnikovskyHeart-Force/ #71355492
 */
 import javafx.application.Application;
 import javafx.stage.Stage;

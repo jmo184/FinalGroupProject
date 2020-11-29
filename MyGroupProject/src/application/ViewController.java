@@ -1,5 +1,17 @@
 package application;
 
+
+/*
+Group 12: The Code Crew
+Team leader:
+Tuan Nguyentuan9891/#72470140
+
+Jackie Tranjmo184/#70924204
+
+Samir Stanislav YezhnikovskyHeart-Force/ #71355492
+*/
+
+
 import java.io.BufferedReader;
 import java.io.FileInputStream;
 import java.io.IOException;
@@ -65,7 +77,7 @@ public class ViewController implements Initializable {
 			
 			int arraySize = items.size();
 			int i = 0;
-
+    // print all the Student ID info the the ListView
 			while (i < arraySize)
 			{
 				list1.getItems().add(items.get(i));

@@ -1,5 +1,14 @@
 package application;
 
+/*
+Group 12: The Code Crew
+Team leader:
+Tuan Nguyentuan9891/#72470140
+
+Jackie Tranjmo184/#70924204
+
+Samir Stanislav YezhnikovskyHeart-Force/ #71355492
+*/
 
 import java.io.IOException;
 
@@ -35,20 +44,17 @@ public class MainController {
 
     @FXML
     void loginpage(ActionEvent event) throws IOException {
-         String user = userName.getText();
-         String pword = password.getText();
- 
-    	
-       //  if(user.equals("user") && pword.equals("pw")) {
-        	 
-        	 if(user.equals("") && pword.equals("")) {
-        	 
-        	   Alert alert = new Alert(AlertType.INFORMATION);
+         String user = userName.getText();   // enter text to username
+         String pword = password.getText();  // enter password
+         	 
+        	 if(user.equals("admin") && pword.equals("abc123")) { // username and password if contain then it will open the app
+        	   // giving alert if the login is successful.
+        	   Alert alert = new Alert(AlertType.INFORMATION);  
 	  	        alert.setTitle("LOGIN STATUS");
 	  	        alert.setHeaderText(null);
 	  	        alert.setContentText("LOGIN SUCCESS");
 	  	        alert.showAndWait();
-	  	    
+	  	    // if login success, the menu will open 
 	  		loginAnchor = FXMLLoader.load(getClass().getResource("mainMenu.fxml")); 
 	  		Scene scene = new Scene(loginAnchor);
 	  		Stage window = (Stage) ((Node)event.getSource()).getScene().getWindow();
@@ -57,15 +63,15 @@ public class MainController {
 	  	        
 	 
          }
-         else{
+         else{  // if the login fail, then input again until corrected password and username. 
         	  Alert alert = new Alert(AlertType.INFORMATION);
 	  	        alert.setTitle("login status");
 	  	        alert.setHeaderText(null);
 	  	        alert.setContentText("Login Fail, please try again");
 	  	        alert.showAndWait();
          }
-         userName.clear();
-         password.clear();
+         userName.clear(); // clear out the text after 
+         password.clear(); // clear out the password after 
     }
 
 }

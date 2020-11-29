@@ -1,5 +1,15 @@
 package application;
+/*
+Group 12: The Code Crew
+Team leader:
+Tuan Nguyentuan9891/#72470140
 
+Jackie Tranjmo184/#70924204
+
+Samir Stanislav YezhnikovskyHeart-Force/ #71355492
+
+this is import all the files needed for  the controller
+*/
 import java.io.BufferedReader;
 
 import java.io.FileReader;
@@ -61,75 +71,73 @@ public class updateData2Controller {
     	    @FXML
     	    void SearchingStu(ActionEvent event) throws IOException {
     	    	 	   
-    	    	BufferedReader br = new BufferedReader(new FileReader("data.txt")); 
-    	    	String line="";
-    	    	ArrayList<String> list = new ArrayList<String>();
-    	    	while ((line = br.readLine()) != null){
+    	    	BufferedReader br = new BufferedReader(new FileReader("data.txt")); // use buffered Reader to open the file 
+    	    	String line="";  // declare the empty line
+    	    	ArrayList<String> list = new ArrayList<String>(); // use array to store data.
+    	    	while ((line = br.readLine()) != null){ // if the file is not empty
     	    	
-    	    		String[] values = line.split(",");
+    	    		String[] values = line.split(","); // add the value to the array
     	  
-    	    	   list.add(values[0]);
+    	    	   list.add(values[0]); // add the array of value to the list
     	    	}    	
-    	    	for (int i = 0; i < list.size(); i += 7) {
-    	    		  List<String> list1 = list.subList(i, Math.min(i + 7, list.size()));
+    	    	for (int i = 0; i < list.size(); i += 7) { // loop through the list length and divide it into sections 
+    	    		  List<String> list1 = list.subList(i, Math.min(i + 7, list.size())); // each of the array inside the arraylist contain 7 items
   		  
-    	    		  
-    
-    	    	        if (list1.get(0).contains(ID.getText())) {
-    	    	        	firstName.setText(list1.get(1));
-   	    	        	lastName.setText(list1.get(2));
+    	    	        if (list1.get(0).contains(ID.getText())) {  // if the Student ID store in the 0 index contain when input the Student ID search
+    	    	        	firstName.setText(list1.get(1)); // print out the first name in after search
+   	    	        	    lastName.setText(list1.get(2));// print out the last name in after search
     	    	       
-   	    	           if (list1.get(3).contains("Female")) {
+   	    	           if (list1.get(3).contains("Female")) {// check the female box in after search
     	    	          
-   	    	        	female.setSelected(true);  	
+   	    	            	female.setSelected(true);  	
     	    	                }
-   	    	                else if (list1.get(3).contains("Male")) {
+   	    	                else if (list1.get(3).contains("Male")) {// check the male box in after search
     	    	                	male.setSelected(true);  	
     	    	                    }
-    	    	        	dob.setText(list1.get(4));
-    	    	        	phone.setText(list1.get(5));
-    	    	        	homeAd.setText(list1.get(6));
+    	    	        	dob.setText(list1.get(4));// print out the dob in after search
+    	    	        	phone.setText(list1.get(5));// print out the phone in after search
+    	    	        	homeAd.setText(list1.get(6));// print out the home address in after search
 
     	    	}
     	    }
     	    	br.close();
     	  }
-    	    
+    	     // update function
     	    @FXML
     	    void Update(ActionEvent event) throws IOException {
     	    
 
-    	    	BufferedReader br = new BufferedReader(new FileReader("data.txt")); 
-    	    	String line="";
-    	    	ArrayList<String> list = new ArrayList<String>();
-    	    	List<List<String>> list1 = new ArrayList<List<String>>();
+    	    	BufferedReader br = new BufferedReader(new FileReader("data.txt"));  // read the file
+    	    	String line=""; 
+    	    	ArrayList<String> list = new ArrayList<String>(); // store in the array list
+    	    	List<List<String>> list1 = new ArrayList<List<String>>(); // store arrayList inside the list.
     	    	while ((line = br.readLine()) != null){
     	
     	    		String[] values = line.split(",");
-    	    	   list.add(values[0]);
+    	    	   list.add(values[0]); // read the contain of the file if exist then store it inside the arraylist
     	    		
     	    			
     	    	}
 
-    	    	 ArrayList<String> inner = new ArrayList<String>();
-    	    	 inner.addAll(list);
-    	    	 for (int i = 0; i < list.size(); i += 7) {
-    	    	        list1.add(new ArrayList<String>(list.subList(i, Math.min(list.size(), i + 7))));
+    	    	 ArrayList<String> inner = new ArrayList<String>(); // declare another arraylist for later use
+    	    	 inner.addAll(list); // addAll the list inside the inner arraylist
+    	    	 for (int i = 0; i < list.size(); i += 7) { // loop through the list and divide the list into an equal section.
+    	    	        list1.add(new ArrayList<String>(list.subList(i, Math.min(list.size(), i + 7)))); 
     	    	        }
     	    	 System.out.println("entirelist1: " + list);
     	    	 System.out.println("entirelist2: " + list1);
     	    	 System.out.println("outerlist: " + list1.get(0));
     	    	 System.out.println("innerlist: " + list.get(0));
     	    for (int i = 0; i<list1.size(); i++) {  
-    	    
+    	       // loop through the list1.size  array, if it contain the updated ID, Delete the entire ID
     	    	if ((list1.get(i).contains(ID.getText()))) {
     	    		
     	    		System.out.println(list1.get(i));
     	    		System.out.println("before clear: "+list1);
-    	    	 	list1.get(i).clear();
+    	    	 	list1.get(i).clear(); // delete funtion
     	    		System.out.println("after clear: "+list1);
     	    		
-    	    		
+    	    		// then add new info or update the info
     	    		   list1.get(i).add(ID.getText());
     	    		   list1.get(i).add(firstName.getText());
     	    		   list1.get(i).add(lastName.getText());
@@ -147,19 +155,17 @@ public class updateData2Controller {
   		              
     	    	}
     	    	}
-    	    System.out.println("afteradd: "+ list1);
-    	    
-    	    
-    	    ArrayList<String> al= new ArrayList<String>();
+    	      
+    	    ArrayList<String> al= new ArrayList<String>(); // declare another arraylist to print out the data or write the update data to file
     	    
     	    for (int j = 0; j<list1.size(); j++) {
-    	    	al.addAll(list1.get(j));
+    	    	al.addAll(list1.get(j)); // add the al Arraylist to file
     	    }
-    	    FileWriter writer = new FileWriter("data.txt");
-		   	for(String str: al) {
+    	    FileWriter writer = new FileWriter("data.txt"); // open the file
+		   	for(String str: al) { // write all content to file
 		   	writer.write(str + System.lineSeparator());
 		   	}
-		   	
+		   	// update warning
 		    Alert alert = new Alert(AlertType.INFORMATION);
 	        alert.setTitle("UPDATE STATUS");
 	        alert.setHeaderText(null);
@@ -176,7 +182,7 @@ public class updateData2Controller {
     	    	br.close();
     	    }
     	    	        	
-
+  // click on the home button to goback to the main Menu
 
     @FXML
     void gobackhome(ActionEvent event) throws IOException {
